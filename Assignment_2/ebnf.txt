@@ -1,0 +1,18 @@
+program   := statement{statement}
+statement := formula TERM
+formula   :=  IF exp1 THEN exp1 ELSE exp1 | exp1
+exp_1     := exp_2 IMPLIES exp_1 | exp_2
+exp_2     := exp_2 AND exp_3 | exp_2 OR exp_3 | exp_2 XOR exp_3 | exp_2 EQUALS exp_3 | exp_3
+exp_3     := NOT exp_3 | exp_4
+exp_4     := ID | CONST | (formula)
+CONST     := TRUE | FALSE
+ID        := alpha{alpha}
+alpha     := UpperCase | LowerCase
+UpperCase := “A” | “B” | “C” | “D” | “E” | “F” | “G” | “H” |
+	     “I” | “J” | “K” | “L” | “M” | “N” | “O” | “P” | “Q” |
+	     “R” | “S” | “T” | “U” | “V ” | “W” | “X” | “Y ” | “Z”
+LowerCase := “a” | “b” | “c” | “d” | “e” | “f” | “g” | “h” |
+	     “i” | “j” | “k” | “l” | “m” | “n” | “o” | “p” | “q” |
+	     “r” | “s” | “t” | “u” | “v” | “w” | “x” | “y” | “z”
+TERM      := ";"
+
